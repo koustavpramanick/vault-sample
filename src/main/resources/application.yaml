@@ -9,3 +9,6 @@ spring:
         enabled: true
   config:
     import: vault://
+
+
+secret: "${password}"

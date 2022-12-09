@@ -10,8 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class VaultTestApplication implements CommandLineRunner {
 
+	//Direct invocation
 	@Value("${password}")
 	String password;
+
+	//Invocation from properties file
+	@Value("${secret}")
+	String secret;
 
 	public static void main(String[] args) {
 		SpringApplication.run(VaultTestApplication.class, args);
@@ -19,7 +24,7 @@ public class VaultTestApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("My password is: " + password);
+		System.out.println("My password is: " + password + " Secret: "+secret);
 	}
 
 
